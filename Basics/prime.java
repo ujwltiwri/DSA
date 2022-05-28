@@ -1,3 +1,5 @@
+package Basics;
+
 import java.util.*;
 
 public class prime {
@@ -10,7 +12,7 @@ public class prime {
             int n = scn.nextInt();
             for (int div = 2; div * div <= n; div++) {
                 if (n % div == 0) {
-                    factor++; //no is non prime because we have one more divisor other than 1 & no itself
+                    factor++; // no is non prime because we have one more divisor other than 1 & no itself
                 }
             }
 
