@@ -25,13 +25,11 @@ public class digits_of_num {
          * extra.
          */
         int remainder = n;
-        int i = 1;
         while (power > 0) {
             remainder = n / power;
             System.out.println(remainder);
             n = n % power;
             power = power / 10;
-            i++;
         }
 
         scn.close();
