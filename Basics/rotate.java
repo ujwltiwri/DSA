@@ -14,7 +14,7 @@ public class rotate {
             count++;
         }
 
-        r = r % count;
+        r = r % count; // r means no of rotation
 
         // handling -ve rotaion
         if (r < 0) {
