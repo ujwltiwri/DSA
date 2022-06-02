@@ -8,7 +8,7 @@ public class pattern1 {
         int n = scn.nextInt();
         for (int row = 1; row <= n; row++) {
             int nst = row; // nst means no of stars
-            /* Here no of stars is equals to no of row */
+            /* Here no of stars is equals to no of rows */
             for (int stars = 1; stars <= nst; stars++) {
                 System.out.print("*\t");
             }
