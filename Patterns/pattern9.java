@@ -23,4 +23,9 @@ public class pattern9 {
         }
         scn.close();
     }
+    // *				*	
+    //     *		*		
+    //         *			
+    //     *		*		
+    // *				*	
 }
