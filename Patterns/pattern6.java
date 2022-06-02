@@ -39,4 +39,9 @@ public class pattern6 {
         }
         scn.close();
     }
+// *   *	*			*	*	
+// *	*				*	*	
+// *						*	
+// *	*				*	*	
+// *	*	*		*	*	*	
 }
