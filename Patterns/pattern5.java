@@ -34,7 +34,7 @@ public class pattern5 {
         scn.close();
     }
     /*
-        * 	
+                * 	
 	*	*	*	
 *	*	*	*	*	
 	*	*	*	
