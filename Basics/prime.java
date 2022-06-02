@@ -13,6 +13,7 @@ public class prime {
             for (int div = 2; div * div <= n; div++) {
                 if (n % div == 0) {
                     factor++; // no is non prime because we have one more divisor other than 1 & no itself
+                    break;
                 }
             }
 
