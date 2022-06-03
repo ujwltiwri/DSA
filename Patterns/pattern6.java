@@ -1,6 +1,6 @@
 package Patterns;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class pattern6 {
     public static void main(String[] args) {
@@ -39,9 +39,9 @@ public class pattern6 {
         }
         scn.close();
     }
-// *   *	*			*	*	
-// *	*				*	*	
-// *						*	
-// *	*				*	*	
-// *	*	*		*	*	*	
+    // * * * * *
+    // * * * *
+    // * *
+    // * * * *
+    // * * * * * *
 }
