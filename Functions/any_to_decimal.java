@@ -1,3 +1,5 @@
+package Functions;
+
 import java.util.Scanner;
 
 public class any_to_decimal {
