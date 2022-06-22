@@ -27,6 +27,18 @@ public class span_of_array {
             }
         }
 
+        // 2nd method
+        // for (int i = 1; i < arr.length; i++) {
+
+        // if (arr[i] < min) {
+        // min = arr[i];
+        // }
+
+        // if (arr[i] > max) {
+        // max = arr[i];
+        // }
+        // }
+
         int ans = max - min;
         System.out.println(ans);
         scn.close();
