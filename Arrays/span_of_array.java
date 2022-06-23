@@ -39,6 +39,20 @@ public class span_of_array {
         // }
         // }
 
+        // 3rd method
+        max = Integer.MIN_VALUE; // minium integer value that can be represented in 32 bits
+        min = Integer.MAX_VALUE; // maximum positive integer value that can be represented in 32 bits
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+
         int ans = max - min;
         System.out.println(ans);
         scn.close();

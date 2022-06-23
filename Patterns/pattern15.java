@@ -47,6 +47,6 @@ public class pattern15 {
                 count--;
             }
         }
-
+        scn.close();
     }
 }
