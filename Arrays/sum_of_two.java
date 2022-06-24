@@ -21,13 +21,13 @@ public class sum_of_two {
             a2[i] = scn.nextInt();
         }
 
-        int[] ans = new int[n1 > n2 ? n1 : n2]; // ans array for storing sum
+        int[] ans = new int[(n1 > n2 ? n1 : n2) + 1]; // ans array for storing sum
         int i = n1 - 1; // pointer for array 1
         int j = n2 - 1; // pointer for array 2
         int k = ans.length - 1; // pointer for ans array
         int carry = 0;
 
-        while (i >= 0 || j >= 0) {
+        while (i >= 0 || j >= 0 || carry > 0) {
             int sum = carry;
 
             if (i >= 0) {
@@ -47,8 +47,11 @@ public class sum_of_two {
         }
 
         System.out.println("Sum of Arrays\n");
-        for (int val : ans) {
-            System.out.println(val);
+        for (int p = 0; p < ans.length; p++) {
+            if (p == 0 && ans[p] == 0) {
+                continue; // means do nothing in if clause and move to next iteration
+            }
+            System.out.println(ans[p]);
         }
 
         scn.close();
