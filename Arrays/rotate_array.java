@@ -22,7 +22,7 @@ public class rotate_array {
         int n = a.length;
         reverse(a, 0, n - k - 1); // 1st -> 0 to n-k-1
         reverse(a, n - k, n - 1); // 2nd -> n-k to n-1
-        reverse(a, 0, n - 1); // 3rd -> 0 to n-1 -> Complete Rotation
+        reverse(a, 0, n - 1); // 3rd -> 0 to n-1 -> Complete Reverse
 
     }
 
