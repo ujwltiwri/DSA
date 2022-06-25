@@ -1,10 +1,9 @@
 package Arrays;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-// import java.util.*;
+import java.io.*;
+import java.util.*;
 
-public class reverse_array {
+public class rotate_array {
     public static void display(int[] a) {
         StringBuilder sb = new StringBuilder();
 
@@ -14,8 +13,21 @@ public class reverse_array {
         System.out.println(sb);
     }
 
-    public static void reverse(int[] a) {
-        int i = 0, j = a.length - 1;
+    public static void rotate(int[] a, int k) {
+        k = k % a.length;
+
+        if (k < 0) {
+            k = k + a.length;
+        }
+        int n = a.length;
+        reverse(a, 0, n - k - 1); // 1st -> 0 to n-k-1
+        reverse(a, n - k, n - 1); // 2nd -> n-k to n-1
+        reverse(a, 0, n - 1); // 3rd -> 0 to n-1 -> Complete Rotation
+
+    }
+
+    public static void reverse(int[] a, int i, int j) {
+        // int i = 0, j = a.length - 1;
         while (i < j) {
             int temp = a[i];
             a[i] = a[j];
@@ -33,7 +45,9 @@ public class reverse_array {
         for (int i = 0; i < n; i++) {
             a[i] = Integer.parseInt(br.readLine());
         }
-        reverse(a);
+        int k = Integer.parseInt(br.readLine());
+
+        rotate(a, k);
         display(a);
     }
 
