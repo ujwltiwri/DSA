@@ -11,11 +11,13 @@ public class subarray {
             a[i] = scn.nextInt();
         }
 
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < a.length; j++) { // i to last array
-                for (int k = i; k <= j; k++) {
+        for (int start = 0; start < n; start++) {
+            for (int end = start; end < a.length; end++) { // i to last array
+
+                for (int k = start; k <= end; k++) {
                     System.out.print(a[k] + "\t");
                 }
+
                 // move to next line
                 System.out.println();
             }
