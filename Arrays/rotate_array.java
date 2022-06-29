@@ -20,6 +20,12 @@ public class rotate_array {
             k = k + a.length;
         }
         int n = a.length;
+        // 1st & Best Solution
+        reverse(a, 0, n - 1); // 1st Time -> complete reverse
+        reverse(a, 0, k - 1); // 2nd time -> 0 to r reverse
+        reverse(a, k, n - 1); // 3rd time -> r to n-1 reverse
+
+        // 2nd Solution
         reverse(a, 0, n - k - 1); // 1st -> 0 to n-k-1
         reverse(a, n - k, n - 1); // 2nd -> n-k to n-1
         reverse(a, 0, n - 1); // 3rd -> 0 to n-1 -> Complete Reverse
