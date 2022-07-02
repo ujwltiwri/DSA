@@ -19,10 +19,12 @@ public class broken_economy {
 
             if (arr[mid] < data) {
                 low = mid + 1; // //left side will be discarded
-                floor = arr[low];
+                floor = arr[mid];
+                // floor = arr[low]; -> alternative to floor = arr[mid]
             } else if (arr[mid] > data) {
                 high = mid - 1; // in this case right side will be discarded
-                ceil = arr[high];
+                ceil = arr[mid];
+                // ceil = arr[high]; -> alternative to ceil = arr[mid]
             } else {
                 floor = arr[mid];
                 ceil = arr[mid];
@@ -30,8 +32,8 @@ public class broken_economy {
             }
         }
 
-        System.out.println(floor);
         System.out.println(ceil);
+        System.out.println(floor);
 
         scn.close();
     }
