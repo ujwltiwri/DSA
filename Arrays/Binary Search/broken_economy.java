@@ -12,7 +12,8 @@ public class broken_economy {
         int data = scn.nextInt();
 
         int low = 0, high = n - 1;
-        int floor = 0, ceil = 0;
+        int ceil = 0; // Smallest Among Larger Elemets
+        int floor = 0; // Largest Among Smaller Elements
 
         while (low <= high) {
             int mid = (low + high) / 2;
