@@ -9,24 +9,29 @@ public class broken_economy {
             arr[i] = scn.nextInt();
         }
 
-        int k = scn.nextInt();
+        int data = scn.nextInt();
 
         int low = 0, high = n - 1;
+        int floor = 0, ceil = 0;
+
         while (low <= high) {
             int mid = (low + high) / 2;
 
-            if (arr[mid] < k) {
-                low = mid + 1;
-            } else if (arr[mid] > k) {
-                high = mid - 1;
+            if (arr[mid] < data) {
+                low = mid + 1; // //left side will be discarded
+                floor = arr[low];
+            } else if (arr[mid] > data) {
+                high = mid - 1; // in this case right side will be discarded
+                ceil = arr[high];
             } else {
-                System.out.println(arr[mid]);
-                return;
+                floor = arr[mid];
+                ceil = arr[mid];
+                break;
             }
         }
 
-        System.out.println(arr[low]);
-        System.out.println(arr[high]);
+        System.out.println(floor);
+        System.out.println(ceil);
 
         scn.close();
     }
