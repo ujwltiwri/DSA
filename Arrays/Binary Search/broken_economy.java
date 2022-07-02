@@ -25,8 +25,8 @@ public class broken_economy {
             }
         }
 
-        System.out.println("Low: " + arr[low]);
-        System.out.println("High: " + arr[high]);
+        System.out.println(arr[low]);
+        System.out.println(arr[high]);
 
         scn.close();
     }
