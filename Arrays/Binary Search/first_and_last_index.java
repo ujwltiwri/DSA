@@ -12,7 +12,7 @@ public class first_and_last_index {
         int data = scn.nextInt();
 
         int low = 0, high = n - 1;
-        int first = 0;
+        int first = -1;
 
         // calculate first index
         while (low <= high) {
@@ -30,7 +30,7 @@ public class first_and_last_index {
         // beaucse values of low & high have been changed so we'll reinitiliaze these
         low = 0;
         high = n - 1;
-        int last = 0;
+        int last = -1;
         // calculate last index
         while (low <= high) {
             int mid = (low + high) / 2;
