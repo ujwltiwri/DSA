@@ -33,6 +33,8 @@ public class search_in_sorted {
     }
 }
 
+// Time Complexity of this question is o(m+n) -> m = row & n = col
+
 /*
  * 1. You are given a number n, representing the number of rows and columns of a
  * square matrix.
