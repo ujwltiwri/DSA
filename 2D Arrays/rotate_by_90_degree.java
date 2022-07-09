@@ -17,12 +17,38 @@ public class rotate_by_90_degree {
          * The transpose of a matrix is found by interchanging its rows into columns or
          * columns into rows.
          */
-
+        // 1-> Easy and Dumb Method
         for (int i = 0; i < arr[0].length; i++) {
             for (int j = arr.length - 1; j >= 0; j--) {
                 System.out.print(arr[j][i] + " ");
             }
             System.out.println();
+        }
+
+        // 2-> Main Method
+        // we will reverse the uppar half or lower half only -> bec if we traverse the
+        // whole matrix then value matrix won't be tranpose
+        // transpose
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < i; j++) {
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
+            }
+        }
+
+        // reverse every row
+        for (int row = 0; row < arr.length; row++) {
+            // using swap method
+            int i = 0, j = arr.length - 1;
+            while (i < j) {
+                int temp = arr[row][i];
+                arr[row][i] = arr[row][j];
+                arr[row][j] = temp;
+
+                i++;
+                j--;
+            }
         }
         scn.close();
     }
