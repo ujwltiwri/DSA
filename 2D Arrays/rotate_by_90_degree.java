@@ -17,7 +17,8 @@ public class rotate_by_90_degree {
          * The transpose of a matrix is found by interchanging its rows into columns or
          * columns into rows.
          */
-        // 1-> Easy and Dumb Method
+        // 1-> Easy and Dumb Method -> Only Works if you want to print the array right
+        // away
         for (int i = 0; i < arr[0].length; i++) {
             for (int j = arr.length - 1; j >= 0; j--) {
                 System.out.print(arr[j][i] + " ");
