@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "Arrays/Binary Search",
-        "2D Arrays"
+        "2D Arrays",
+        "Strings"
     ]
 }
