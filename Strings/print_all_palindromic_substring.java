@@ -43,3 +43,8 @@ public class print_all_palindromic_substring {
     }
 
 }
+
+/*
+ * All palindromic substrings(one in a line).
+First, all palindromic substrings starting from first character of string will be printed, then from second character and so on
+ */
