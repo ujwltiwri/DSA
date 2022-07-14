@@ -39,7 +39,7 @@ public class string_compression {
                 sb.append(current);
             }
         }
-
+        // checking for last iteration
         if (count > 1) {
             sb.append(count);
         }
