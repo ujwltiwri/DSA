@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "Strings",
+        "Recursion",
         "Arrays/Binary Search",
         "2D Arrays",
-        "Recursion"
+        "Arrays"
     ]
 }
