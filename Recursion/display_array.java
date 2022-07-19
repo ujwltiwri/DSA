@@ -14,6 +14,7 @@ public class display_array {
         }
 
         displayArr(arr, 0);
+        scn.close();
     }
 
     public static void displayArr(int[] arr, int idx) {
