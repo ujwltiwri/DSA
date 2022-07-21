@@ -64,6 +64,9 @@ public class last_index {
             return -1;
         }
 
+        // we are doing this in preorder->
+        // How? because we are starting our search from last index to first index
+
         if (arr[idx] == x) {
             return idx;
         }
