@@ -1,7 +1,6 @@
-import java.io.*;
 import java.util.*;
 
-public class remove_prime {
+public class remove_primes {
 
     public static void solution(ArrayList<Integer> al) {
         for (int i = al.size() - 1; i >= 0; i--) {

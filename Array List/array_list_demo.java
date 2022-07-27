@@ -1,11 +1,12 @@
-import java.io.*;
+
+// import java.io.*;
 import java.util.*;
 
 public class array_list_demo {
 
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
+        // int n = scn.nextInt();
         ArrayList<Integer> al = new ArrayList<>();
 
         al.add(10); // to add in last idx -> al.add(val)
@@ -27,6 +28,8 @@ public class array_list_demo {
         for (int val : al) {
             System.out.println(val);
         }
+
+        scn.close();
     }
 
 }

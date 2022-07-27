@@ -1,4 +1,5 @@
-import java.io.*;
+
+// import java.io.*;
 import java.util.*;
 
 public class remove_prime {
@@ -37,6 +38,8 @@ public class remove_prime {
         }
         solution(al);
         System.out.println(al);
+
+        scn.close();
     }
 
 }
