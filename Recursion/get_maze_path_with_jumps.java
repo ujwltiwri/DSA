@@ -12,8 +12,8 @@ public class get_maze_path_with_jumps {
 
     // sr - source row = 0
     // sc - source column = 0
-    // dr - destination row = n-1
-    // dc - destination column = m-1
+    // dr - destination row = n-1, 2, 3, 4 -> for 4*4
+    // dc - destination column = m-1, 2, 3, 4 -> for 4*4
 
     public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
 
