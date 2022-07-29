@@ -24,6 +24,11 @@ public class get_kpc {
 
         ArrayList<String> myans = new ArrayList<>();
         int val = ch - '0';
+        /*
+         * 0 is of char type val of is eg. if we want '6' - '0' into num 6
+         * the ASCII val of '6' is 54 and '0' is 48, So 54-48 = 6
+         * hence this is converted into num 6
+         */
         String strfromval = arr[val];
 
         for (int i = 0; i < strfromval.length(); i++) {

@@ -10,12 +10,12 @@ public class print_stair_paths {
     }
 
     public static void printStairPaths(int n, String path) {
-        if (n <= 0) {
-            if (n == 0) {
-                System.out.println(path);
-                return;
-            }
+        if (n == 0) {
+            System.out.println(path);
+            return;
+        }
 
+        if (n < 0) {
             return;
         }
 
