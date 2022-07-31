@@ -13,7 +13,6 @@ public class add_last_in_ll {
         int size;
 
         void addLast(int val) {
-            // Write your code here
             Node root = new Node();
             root.data = val;
 
