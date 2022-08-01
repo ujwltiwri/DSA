@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class display_a_ll {
+public class remove {
     public static class Node {
         int data;
         Node next;
@@ -32,23 +32,32 @@ public class display_a_ll {
         }
 
         public void display() {
-            Node curr = head;
-
-            if (size == 0)
-                return;
-
-            while (curr != null) {
-                System.out.print(curr.data + " ");
-                curr = curr.next;
+            for (Node temp = head; temp != null; temp = temp.next) {
+                System.out.print(temp.data + " ");
             }
-
             System.out.println();
+        }
+
+        public void removeFirst() {
+            if (size == 0) {
+                System.out.println("List is empty");
+            } else if (size == 1) {
+                head = tail = null;
+                size = 0;
+                // Or
+                // head = null;
+                // tail = null;
+            } else {
+                head = head.next;
+                size--;
+            }
         }
     }
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         LinkedList list = new LinkedList();
+
         String str = br.readLine();
         while (str.equals("quit") == false) {
             if (str.startsWith("addLast")) {
@@ -58,6 +67,8 @@ public class display_a_ll {
                 System.out.println(list.size());
             } else if (str.startsWith("display")) {
                 list.display();
+            } else if (str.startsWith("removeFirst")) {
+                list.removeFirst();
             }
             str = br.readLine();
         }
