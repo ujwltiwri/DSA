@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class add_first {
+public class add_at_last_index {
     public static class Node {
         int data;
         Node next;
@@ -85,17 +85,41 @@ public class add_first {
         }
 
         public void addFirst(int val) {
-            Node root = new Node();
-            root.data = val;
+            Node temp = new Node();
+            temp.data = val;
+            temp.next = head;
+            head = temp;
 
             if (size == 0) {
-                head = tail = root;
-            } else {
-                root.next = head;
-                head = root;
+                tail = temp;
             }
 
             size++;
+        }
+
+        // main working func for this question
+        public void addAt(int idx, int val) {
+            if (idx < 0 || idx > size) {
+                System.out.println("Invalid arguments");
+                return;
+            } else if (idx == 0) {
+                addFirst(val);
+            } else if (idx == size) {
+                addLast(val);
+            } else {
+                Node root = new Node();
+                root.data = val;
+
+                Node curr = head;
+                while (idx > 1) {
+                    curr = curr.next;
+                    idx--;
+                }
+
+                root.next = curr.next;
+                curr.next = root;
+                size++;
+            }
         }
     }
 
@@ -133,6 +157,10 @@ public class add_first {
             } else if (str.startsWith("addFirst")) {
                 int val = Integer.parseInt(str.split(" ")[1]);
                 list.addFirst(val);
+            } else if (str.startsWith("addAt")) {
+                int idx = Integer.parseInt(str.split(" ")[1]);
+                int val = Integer.parseInt(str.split(" ")[2]);
+                list.addAt(idx, val);
             }
             str = br.readLine();
         }
@@ -144,34 +172,35 @@ public class add_first {
  * 2. Here is a list of existing functions:
  * 2.1 addLast - adds a new element with given value to the end of Linked List
  * 2.2. display - Prints the elements of linked list from front to end in a
- * single line.
- * All elements are separated by space.
+ * single line. All
+ * elements are separated by space
  * 2.3. size - Returns the number of elements in the linked list.
  * 2.4. removeFirst - Removes the first element from Linked List.
  * 2.5. getFirst - Returns the data of first element.
  * 2.6. getLast - Returns the data of last element.
  * 2.7. getAt - Returns the data of element available at the index passed.
- * 3. You are required to complete the body of addFirst function. This function
- * should add the element to the beginning of the linkedlist and appropriately
- * set the head, tail and size data-members.
+ * 2.8. addFirst - adds a new element with given value in front of linked list.
+ * 3. You are required to complete the body of addAt function. This function
+ * should add the element at the index mentioned as parameter. If the idx is
+ * inappropriate print "Invalid arguments".
  * 
  * Input ->
  * addFirst 10
  * getFirst
- * addFirst 20
+ * addAt 0 20
  * getFirst
  * getLast
  * display
  * size
- * addLast 40
+ * addAt 2 40
  * getLast
- * addLast 50
+ * addAt 1 50
  * addFirst 30
  * removeFirst
  * getFirst
  * removeFirst
  * removeFirst
- * getAt 3
+ * addAt 2 60
  * display
  * size
  * removeFirst
@@ -187,8 +216,8 @@ public class add_first {
  * 2
  * 40
  * 20
- * Invalid arguments
- * 40 50
- * 2
- * List is empty
+ * 10 40 60
+ * 3
+ * 60
+ * 
  */
