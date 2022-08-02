@@ -203,6 +203,7 @@ public class Kth_Node_From_End_Of_Linked_List {
             Node slow = head;
             Node fast = head;
 
+            // fast pointer moves kth steps away from slow pointer
             while (k-- > 0) {
                 fast = fast.next;
             }
