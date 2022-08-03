@@ -329,6 +329,7 @@ public class k_reverse_in_ll {
             }
         }
 
+        // main logic
         public void kReverse(int k) {
             LinkedList ans = new LinkedList();
 
@@ -338,9 +339,13 @@ public class k_reverse_in_ll {
                 if (this.size >= k) {
                     for (int i = 0; i < k; i++) {
                         // adding k times
-                        int val = this.getFirst();
-                        this.removeFirst();
-                        res.addFirst(val);
+                        int val = this.getFirst(); // got 1st value
+                        this.removeFirst(); // then removed that 1st value from org ll
+                        res.addFirst(val); // now added the value at 1st of res ll
+                        /*
+                         * e.g. org ll's k batch has val 1, 2, 3 -> So in 1st iter. 1 is added, then 2
+                         * is added in first node then 3 -> 3, 2, 1
+                         */
                     }
                 } else {
                     // now if available nodes in org ll are less than k the add these values as it
