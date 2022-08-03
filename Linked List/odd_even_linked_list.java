@@ -297,6 +297,7 @@ public class odd_even_linked_list {
             this.size = res.size;
         }
 
+        // main logic
         public void oddEven() {
             LinkedList odd = new LinkedList();
             LinkedList even = new LinkedList();
@@ -316,15 +317,18 @@ public class odd_even_linked_list {
             }
 
             if (odd.size > 0 && even.size > 0) {
+                // if both odd & even exists
                 odd.tail.next = even.head;
                 this.head = odd.head;
                 this.tail = even.tail;
                 this.size = odd.size + even.size;
             } else if (odd.size > 0) {
+                // if odd exists
                 this.head = odd.head;
                 this.tail = odd.tail;
                 this.size = odd.size;
             } else if (even.size > 0) {
+                // if even exists
                 this.head = even.head;
                 this.tail = even.tail;
                 this.size = even.size;
