@@ -304,22 +304,21 @@ public class odd_even_linked_list {
             Node curr = this.head;
 
             while (this.size > 0) {
+
                 if (curr.data % 2 == 0) {
-                    // even hai
                     even.addLast(curr.data);
-                    curr = curr.next;
                 } else {
-                    // odd hai
                     odd.addLast(curr.data);
-                    curr = curr.next;
                 }
+
+                curr = curr.next;
                 size--;
             }
 
             if (odd.size > 0 && even.size > 0) {
                 // if both odd & even exists
-                odd.tail.next = even.head;
                 this.head = odd.head;
+                odd.tail.next = even.head;
                 this.tail = even.tail;
                 this.size = odd.size + even.size;
             } else if (odd.size > 0) {
