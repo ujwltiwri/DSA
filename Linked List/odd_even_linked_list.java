@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class remove_duplicate_in_sorted_linked_list {
+public class odd_even_linked_list {
     public static class Node {
         int data;
         Node next;
@@ -280,27 +280,55 @@ public class remove_duplicate_in_sorted_linked_list {
             return sl;
         }
 
-        // main logic here
         public void removeDuplicates() {
-            Node curr = this.head;
-            LinkedList ans = new LinkedList();
+            LinkedList res = new LinkedList();
 
-            while (curr != null) {
-                if (ans.size == 0 || ans.getLast() != curr.data) {
-                    ans.addLast(curr.data);
-                    curr = curr.next;
-                } else {
-                    curr = curr.next;
+            while (this.size() > 0) {
+                int val = this.getFirst();
+                this.removeFirst();
+
+                if (res.size() == 0 || val != res.tail.data) {
+                    res.addLast(val);
                 }
             }
 
-            this.head = ans.head;
-            this.tail = ans.tail;
-            this.size = ans.size;
+            this.head = res.head;
+            this.tail = res.tail;
+            this.size = res.size;
+        }
 
-            this.head = ans.head;
-            this.tail = ans.tail;
-            this.size = ans.size;
+        public void oddEven() {
+            LinkedList odd = new LinkedList();
+            LinkedList even = new LinkedList();
+            Node curr = this.head;
+
+            while (this.size > 0) {
+                if (curr.data % 2 == 0) {
+                    // even hai
+                    even.addLast(curr.data);
+                    curr = curr.next;
+                } else {
+                    // odd hai
+                    odd.addLast(curr.data);
+                    curr = curr.next;
+                }
+                size--;
+            }
+
+            if (odd.size > 0 && even.size > 0) {
+                odd.tail.next = even.head;
+                this.head = odd.head;
+                this.tail = even.tail;
+                this.size = odd.size + even.size;
+            } else if (odd.size > 0) {
+                this.head = odd.head;
+                this.tail = odd.tail;
+                this.size = odd.size;
+            } else if (even.size > 0) {
+                this.head = even.head;
+                this.tail = even.tail;
+                this.size = even.size;
+            }
         }
     }
 
@@ -315,22 +343,35 @@ public class remove_duplicate_in_sorted_linked_list {
             l1.addLast(d);
         }
 
+        int a = Integer.parseInt(br.readLine());
+        int b = Integer.parseInt(br.readLine());
+
         l1.display();
-        l1.removeDuplicates();
+        l1.oddEven();
+        l1.display();
+        l1.addFirst(a);
+        l1.addLast(b);
         l1.display();
     }
 }
 
 /*
  * 1. You are given a partially written LinkedList class.
- * 2. You are required to complete the body of removeDuplicates function. The
- * function is called on a sorted list. The function must remove all duplicates
- * from the list in linear time and constant space
+ * 2. You are required to complete the body of oddEven function. The function is
+ * expected to tweak the list such that all odd values are followed by all even
+ * values. The relative order of elements should not change. Also, take care of
+ * the cases when there are no odd or no even elements. Make sure to properly
+ * set head, tail and size as the function will be tested by calling addFirst
+ * and addLast.
  * 
  * Input ->
+ * 7
+ * 2 8 9 1 5 4 3
  * 10
- * 2 2 2 3 3 5 5 5 5 5
+ * 100
  * 
- * Output -> 2 2 2 3 3 5 5 5 5 5
- * 2 3 5
+ * Output ->
+ * 2 8 9 1 5 4 3
+ * 9 1 5 3 2 8 4
+ * 10 9 1 5 3 2 8 4 100
  */
