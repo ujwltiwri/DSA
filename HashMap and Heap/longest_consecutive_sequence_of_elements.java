@@ -37,7 +37,7 @@ public class longest_consecutive_sequence_of_elements {
 
                 while (map.containsKey(start + length)) {
                     length++; // if key + length exists then -> length++
-                    /* if 5 exists then 5 + 1 = 6 -> then length++ 6 -> 7 */
+                    /* if 5 exists then 5 + 1 = 6 -> then length++ 6 -> 7 like this */
                 }
 
                 if (length > maxlen) {
