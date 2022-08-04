@@ -32,11 +32,12 @@ public class longest_consecutive_sequence_of_elements {
 
         for (int key : map.keySet()) {
             if (map.get(key) == true) {
-                int length = 1;
-                int start = key;
+                int length = 1; // if got true then length will be 1 -> Initially
+                int start = key; // and start position is the key of element
 
                 while (map.containsKey(start + length)) {
-                    length++;
+                    length++; // if key + length exists then -> length++
+                    /* if 5 exists then 5 + 1 = 6 -> then length++ 6 -> 7 */
                 }
 
                 if (length > maxlen) {
