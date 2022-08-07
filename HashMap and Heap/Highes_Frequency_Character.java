@@ -12,13 +12,15 @@ public class Highes_Frequency_Character {
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
-            if (map.containsKey(ch) == false) {
-                map.put(ch, 1);
-            } else {
-                int org_freq = map.get(ch);
-                int new_freq = org_freq + 1;
-                map.put(ch, new_freq);
-            }
+            // if (map.containsKey(ch) == false) {
+            // map.put(ch, 1);
+            // } else {
+            // int org_freq = map.get(ch);
+            // int new_freq = org_freq + 1;
+            // map.put(ch, new_freq);
+            // }
+            // this commented code can also be written like this
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
 
         char maxch = str.charAt(0);
