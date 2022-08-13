@@ -33,7 +33,7 @@ public class write_hashmap {
 
         // to get bucket index -> bi (Bucket Index)
         private int hashFunction(K key) {
-            int hcode = key.hashCode();
+            int hcode = key.hashCode(); // it automatically gives us the arr index at which key might be present
             int bi /* (Bucket Index) */ = Math.abs(hcode) % buckets.length;
             return bi;
         }
@@ -59,9 +59,9 @@ public class write_hashmap {
         private void reHash() throws Exception {
             LinkedList<HMNode>[] old = buckets; // this has the value of buckets array
             initbuckets(2 * old.length); // now size of new buckets arr will be double the previous size
-            size = 0;
+            size = 0; // new size of new array will be zero
 
-            // now removing the data from prev buckets arr to new buckets arr
+            // adding data from prev buckets arr to new buckets arr
             for (int bi = 0; bi < old.length; bi++) {
                 for (HMNode node : old[bi]) {
                     put(node.key, node.value);
