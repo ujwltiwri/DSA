@@ -2,7 +2,7 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class prority_queue_intro {
+class priority_queue_intro {
     public static void main(String[] args) throws IOException {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
