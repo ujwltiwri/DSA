@@ -2,7 +2,7 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class k_largest_elements {
+class K_largest_elements {
     public static void main(String[] args) throws IOException {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
@@ -12,8 +12,6 @@ class k_largest_elements {
         }
         int k = scn.nextInt();
         solve(n, num, k);
-
-        scn.close();
     }
 
     // -----------------------------------------------------
@@ -34,6 +32,7 @@ class k_largest_elements {
             }
         }
 
+        // 1-> Using Stack
         // make a stack to add elements in reverse order
         Stack<Integer> stk = new Stack<>();
 
@@ -44,5 +43,16 @@ class k_largest_elements {
         while (stk.size() > 0) {
             System.out.print(stk.pop() + " ");
         }
+
+        // 2-> Using ArrayList
+        // ArrayList<Integer> al = new ArrayList<>();
+
+        // for(int i = 0; i < k; i++){
+        // al.add(pq.remove());
+        // }
+
+        // for(int i = al.size()-1; i >= 0; i--){
+        // System.out.print(al.get(i) + " ");
+        // }
     }
 }
