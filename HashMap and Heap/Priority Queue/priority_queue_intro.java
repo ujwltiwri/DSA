@@ -20,9 +20,24 @@ class priority_queue_intro {
     // It should print required output.
     public static void solve(int n, int[] arr, int k) {
         // Priority Queue Introduction
-        /* This is Normal Priority Queue -> Elements Are Added & Removed in Normal Order i.e. Increasing -> Low to High */ 
+        /*
+         * This is Normal Priority Queue -> Elements Are Added & Removed in Normal Order
+         * i.e. Increasing -> Low to High
+         */
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        /* This is Reversed Priority Queue -> Elements Are Added & Removed in Reversed Order i.e. Decreasing -> High to Low */
+        /*
+         * This is Reversed Priority Queue -> Elements Are Added & Removed in Reversed
+         * Order i.e. Decreasing -> High to Low
+         */
+
+        /*
+         * Instead of Writing Collections.reverseOrder() -> We can also use this & other
+         * Concept to reverese the pq
+         */
+        PriorityQueue<Integer> pqu = new PriorityQueue<>((a, b) -> {
+            return b - a; // this will now change the default behaviour of PQ -> From Ascending to
+                          // Desceding
+        });
         // 1-> Add into Priority Queue
         pq.add(5);
         pq.add(10);
