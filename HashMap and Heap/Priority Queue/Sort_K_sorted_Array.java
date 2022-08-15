@@ -30,7 +30,7 @@ public class Sort_K_sorted_Array {
         }
 
         // 2nd Method
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        // PriorityQueue<Integer> pq = new PriorityQueue<>();
         // Add first k+1 elements to the Priority Queue
         // for (int i = 0; i <= k; i++) {
         // pq.add(arr[i]);
